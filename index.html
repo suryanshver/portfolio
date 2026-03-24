@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NOISE OVERLAY ── */
     body::before {
       content: '';
       position: fixed;
@@ -42,12 +41,10 @@
       z-index: 9999;
     }
 
-    /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 2px; }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -86,7 +83,6 @@
 
     .nav-links a:hover { color: var(--accent); }
 
-    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -211,7 +207,21 @@
       transform: translateY(-2px);
     }
 
-    /* ── SECTION WRAPPER ── */
+    /* CV Download Button — special style */
+    .btn-cv {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(0,255,224,0.4);
+      font-weight: 700;
+    }
+
+    .btn-cv:hover {
+      background: rgba(0,255,224,0.08);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 0 16px rgba(0,255,224,0.15);
+    }
+
     section {
       padding: 100px 10vw;
       position: relative;
@@ -244,7 +254,7 @@
       max-width: 200px;
     }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     #skills { background: var(--surface); }
 
     .skills-grid {
@@ -289,7 +299,7 @@
       color: var(--accent);
     }
 
-    /* ── PROJECTS ── */
+    /* PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -368,8 +378,11 @@
       color: var(--accent);
     }
 
-    /* ── EDUCATION & TRAINING ── */
+    /* EDUCATION — separate section */
     #education { background: var(--surface); }
+
+    /* TRAINING — separate section */
+    #training { background: var(--bg); }
 
     .timeline {
       position: relative;
@@ -386,11 +399,15 @@
 
     .timeline-item {
       position: relative;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
       padding: 28px 32px;
       background: var(--bg);
       border: 1px solid var(--border);
       transition: border-color 0.2s;
+    }
+
+    #training .timeline-item {
+      background: var(--surface);
     }
 
     .timeline-item:hover { border-color: rgba(0,255,224,0.2); }
@@ -429,7 +446,9 @@
       font-size: 13px;
     }
 
-    /* ── CERTS & ACHIEVEMENTS ── */
+    /* CERTS */
+    #certs { background: var(--surface); }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -440,7 +459,7 @@
 
     .mini-card {
       padding: 24px;
-      background: var(--surface);
+      background: var(--bg);
       border: 1px solid var(--border);
       transition: border-color 0.2s;
     }
@@ -475,7 +494,7 @@
       margin-top: 2px;
     }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact {
       background: var(--bg);
       text-align: center;
@@ -533,7 +552,6 @@
       border-top: 1px solid var(--border);
     }
 
-    /* ── ANIMATIONS ── */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -545,7 +563,6 @@
       transform: translateY(0);
     }
 
-    /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       .nav-links { gap: 16px; }
@@ -564,6 +581,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#training">Training</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -583,6 +601,7 @@
       <a href="mailto:vermasuryansh349@gmail.com" class="btn btn-primary">✉ Get in touch</a>
       <a href="https://github.com/suryanshver" target="_blank" class="btn btn-ghost">⌥ GitHub</a>
       <a href="https://www.linkedin.com/in/suryansh-verma1" target="_blank" class="btn btn-ghost">⌘ LinkedIn</a>
+      <a href="Suryansh_Verma_CV.docx" download class="btn btn-cv">↓ Download CV</a>
     </div>
   </div>
 </section>
@@ -689,11 +708,11 @@
   </div>
 </section>
 
-<!-- EDUCATION & TRAINING -->
+<!-- EDUCATION — B.Tech, 12th, 10th only -->
 <section id="education">
   <div class="section-label fade-up">
     <span class="section-num">03</span>
-    <h2 class="section-title">Education & Training</h2>
+    <h2 class="section-title">Education</h2>
     <div class="section-line"></div>
   </div>
   <div class="timeline fade-up">
@@ -706,24 +725,36 @@
     </div>
 
     <div class="timeline-item">
-      <div class="timeline-date">JUN 2025 — JUL 2025</div>
-      <div class="timeline-role">Full Stack Development Training</div>
-      <div class="timeline-org">Cipher Schools</div>
-      <div class="timeline-desc">Hands-on MERN stack training covering React, Node.js, Express, MongoDB. Built and deployed end-to-end web applications with responsive UI, RESTful APIs, authentication, and database integration.</div>
-    </div>
-
-    <div class="timeline-item">
       <div class="timeline-date">MAR 2022 — MAY 2023</div>
-      <div class="timeline-role">Intermediate (PCM)</div>
+      <div class="timeline-role">Intermediate (PCM) — Class XII</div>
       <div class="timeline-org">St Mary's Academy · Saharanpur, UP</div>
       <div class="timeline-desc">Percentage: 71%</div>
     </div>
 
     <div class="timeline-item">
       <div class="timeline-date">MAR 2020 — MAY 2021</div>
-      <div class="timeline-role">Matriculation</div>
+      <div class="timeline-role">Matriculation — Class X</div>
       <div class="timeline-org">St Mary's Academy · Saharanpur, UP</div>
       <div class="timeline-desc">Percentage: 88%</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRAINING — Cipher Schools only -->
+<section id="training">
+  <div class="section-label fade-up">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Training</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline fade-up">
+
+    <div class="timeline-item">
+      <div class="timeline-date">JUN 2025 — JUL 2025</div>
+      <div class="timeline-role">Full Stack Development Training</div>
+      <div class="timeline-org">Cipher Schools</div>
+      <div class="timeline-desc">Hands-on MERN stack training covering React, Node.js, Express, MongoDB. Built and deployed end-to-end web applications with responsive UI, RESTful APIs, authentication, and database integration.</div>
     </div>
 
   </div>
@@ -732,7 +763,7 @@
 <!-- CERTS & ACHIEVEMENTS -->
 <section id="certs">
   <div class="section-label fade-up">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2 class="section-title">Certs & Achievements</h2>
     <div class="section-line"></div>
   </div>
@@ -789,23 +820,22 @@
     <a href="https://www.linkedin.com/in/suryansh-verma1" target="_blank" class="contact-item">
       <span>⌘</span> linkedin.com/in/suryansh-verma1
     </a>
+    <a href="Suryansh_Verma_CV.docx" download class="contact-item" style="border-color:rgba(0,255,224,0.3);color:var(--accent);">
+      <span>↓</span> Download CV
+    </a>
   </div>
   <p class="footer-line">© 2026 SURYANSH VERMA · FULL STACK DEVELOPER · BUILT WITH HTML/CSS/JS</p>
 </section>
 
 <script>
-  // Intersection Observer for fade-up
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Stagger project cards & skill blocks
   document.querySelectorAll('.project-card, .skill-block, .timeline-item, .mini-card').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.08) + 's';
     el.classList.add('fade-up');
